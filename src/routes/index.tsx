@@ -75,7 +75,7 @@ function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-section relative min-h-[640px] lg:min-h-[750px] overflow-hidden bg-[#fafafa] dark:bg-background pt-10 pb-20 lg:py-24">
+      <section className="hero-section relative min-h-[600px] lg:min-h-[700px] overflow-hidden bg-[#fafafa] dark:bg-background pt-2 pb-16 lg:pt-4 lg:pb-20">
         {/* Full Image Background */}
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat bg-[center_right_-160px] sm:bg-[center_right_-80px] md:bg-right lg:bg-[center_right]"
@@ -90,7 +90,7 @@ function Index() {
         />
 
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
-          <div className="max-w-xl lg:max-w-2xl py-4 sm:py-8">
+          <div className="max-w-xl lg:max-w-2xl py-1 sm:py-2">
             {/* Pill Badge */}
             <div className="hero-fade-in inline-block" style={{ animationDelay: "0.05s" }}>
               <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/90 px-4 py-1.5 text-xs font-medium text-slate-700 shadow-sm backdrop-blur-md dark:border-border dark:bg-card/90 dark:text-muted-foreground">
@@ -100,8 +100,8 @@ function Index() {
             </div>
 
             {/* Editorial Headline with Serif & Blue Swoosh Underline */}
-            <div className="hero-fade-in mt-7" style={{ animationDelay: "0.15s" }}>
-              <h1 className="font-hero-serif text-5xl font-bold tracking-tight text-slate-900 dark:text-foreground sm:text-6xl lg:text-[72px] leading-[1.06]">
+            <div className="hero-fade-in mt-4 sm:mt-5" style={{ animationDelay: "0.15s" }}>
+              <h1 className="font-hero-serif text-5xl font-bold tracking-tight text-slate-900 dark:text-foreground sm:text-6xl lg:text-[70px] leading-[1.06]">
                 Have an Idea?
                 <br />
                 Let&apos;s{" "}
