@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ApiSubmitRequirementRouteImport } from './routes/api/submit-requirement'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiSubmitRequirementRoute = ApiSubmitRequirementRouteImport.update({
   id: '/api/submit-requirement',
   path: '/api/submit-requirement',
@@ -32,30 +38,34 @@ const ApiSubmitRequirementRoute = ApiSubmitRequirementRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/api/submit-requirement': typeof ApiSubmitRequirementRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/api/submit-requirement': typeof ApiSubmitRequirementRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/api/submit-requirement': typeof ApiSubmitRequirementRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/api/submit-requirement'
+  fullPaths: '/' | '/about' | '/contact' | '/api/submit-requirement'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/api/submit-requirement'
-  id: '__root__' | '/' | '/about' | '/api/submit-requirement'
+  to: '/' | '/about' | '/contact' | '/api/submit-requirement'
+  id: '__root__' | '/' | '/about' | '/contact' | '/api/submit-requirement'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
   ApiSubmitRequirementRoute: typeof ApiSubmitRequirementRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/submit-requirement': {
       id: '/api/submit-requirement'
       path: '/api/submit-requirement'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
   ApiSubmitRequirementRoute: ApiSubmitRequirementRoute,
 }
 export const routeTree = rootRouteImport
