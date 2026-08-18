@@ -75,17 +75,17 @@ function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-section relative min-h-[600px] lg:min-h-[700px] overflow-hidden bg-[#fafafa] dark:bg-background pt-2 pb-16 lg:pt-4 lg:pb-20">
-        {/* Full Image Background */}
+      <section className="hero-section relative min-h-[620px] lg:min-h-[calc(100vh-4rem)] flex items-center overflow-hidden bg-[#fafafa] dark:bg-background pt-4 pb-12 lg:py-16">
+        {/* Full Image Background anchored to bottom right */}
         <div 
-          className="absolute inset-0 bg-cover bg-no-repeat bg-[center_right_-160px] sm:bg-[center_right_-80px] md:bg-right lg:bg-[center_right]"
+          className="absolute inset-0 bg-cover bg-no-repeat bg-bottom md:bg-[position:right_bottom] lg:bg-[position:calc(100%+40px)_bottom] 2xl:bg-[position:right_bottom]"
           style={{ backgroundImage: "url('/hero-bg.jpg')" }}
           aria-hidden
         />
 
         {/* Light & Dark Mode Readability Overlays */}
         <div 
-          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#fafafa]/95 via-[#fafafa]/80 to-transparent md:from-[#fafafa]/90 md:via-[#fafafa]/40 md:to-transparent dark:from-background/95 dark:via-background/70 dark:to-transparent" 
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#fafafa]/95 via-[#fafafa]/85 to-transparent md:from-[#fafafa]/90 md:via-[#fafafa]/30 md:to-transparent dark:from-background/95 dark:via-background/70 dark:to-transparent" 
           aria-hidden 
         />
 
