@@ -33,7 +33,7 @@ export function SiteHeader() {
             <Link
               key={item.label}
               to={item.to}
-              hash={"hash" in item ? item.hash : undefined}
+              {...(item.hash ? { hash: item.hash } : {})}
               className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
               {item.label}
@@ -65,7 +65,7 @@ export function SiteHeader() {
               <Link
                 key={item.label}
                 to={item.to}
-                hash={"hash" in item ? item.hash : undefined}
+                {...(item.hash ? { hash: item.hash } : {})}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-3 text-base font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
               >
