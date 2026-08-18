@@ -13,8 +13,8 @@ export function Field({
   children,
 }: {
   label: string;
-  hint?: string;
-  required?: boolean;
+  hint?: string | undefined;
+  required?: boolean | undefined;
   error?: string | undefined;
   children: ReactNode;
 }) {
@@ -44,11 +44,11 @@ export function TextField({
   label: string;
   value: string;
   onChange: (v: string) => void;
-  placeholder?: string;
-  required?: boolean;
+  placeholder?: string | undefined;
+  required?: boolean | undefined;
   error?: string | undefined;
-  hint?: string;
-  type?: string;
+  hint?: string | undefined;
+  type?: string | undefined;
 }) {
   return (
     <Field label={label} required={required} error={error} hint={hint}>
@@ -78,12 +78,12 @@ export function TextAreaField({
   label: string;
   value: string;
   onChange: (v: string) => void;
-  placeholder?: string;
-  required?: boolean;
+  placeholder?: string | undefined;
+  required?: boolean | undefined;
   error?: string | undefined;
-  hint?: string;
-  rows?: number;
-  maxLength?: number;
+  hint?: string | undefined;
+  rows?: number | undefined;
+  maxLength?: number | undefined;
 }) {
   return (
     <Field label={label} required={required} error={error} hint={hint}>
@@ -117,10 +117,10 @@ export function OptionGroup({
   options: readonly string[];
   value: string;
   onChange: (v: string) => void;
-  required?: boolean;
+  required?: boolean | undefined;
   error?: string | undefined;
-  hint?: string;
-  columns?: 2 | 3;
+  hint?: string | undefined;
+  columns?: 2 | 3 | undefined;
 }) {
   return (
     <Field label={label} required={required} error={error} hint={hint}>
@@ -168,9 +168,9 @@ export function MultiSelect({
   options: readonly string[];
   values: string[];
   onChange: (v: string[]) => void;
-  required?: boolean;
+  required?: boolean | undefined;
   error?: string | undefined;
-  hint?: string;
+  hint?: string | undefined;
 }) {
   const toggle = (opt: string) =>
     onChange(values.includes(opt) ? values.filter((v) => v !== opt) : [...values, opt]);
