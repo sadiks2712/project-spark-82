@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Hexagon } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -12,44 +12,54 @@ const NAV: { label: string; to: "/" | "/about" | "/contact"; hash?: string }[] =
   { label: "Contact", to: "/contact" },
 ];
 
-
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid size-9 place-items-center rounded-xl bg-gradient-brand shadow-glow">
-            <Hexagon className="size-4 text-primary-foreground" strokeWidth={2.5} />
-          </span>
-          <span className="font-display text-[1.05rem] font-bold tracking-tight">
-            SoftWare Hub
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/90 backdrop-blur-md">
+      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-4 px-6 sm:px-10">
+        {/* Brand Logo */}
+        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <div className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 shadow-md shadow-blue-500/20">
+            <svg viewBox="0 0 24 24" className="size-5 fill-white">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            </svg>
+          </div>
+          <span className="text-xl font-bold tracking-tight text-foreground">
+            Software <span className="text-blue-600 dark:text-blue-400">Hub</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        {/* Center Nav */}
+        <nav className="hidden items-center gap-8 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.label}
               to={item.to}
               {...(item.hash ? { hash: item.hash } : {})}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="text-[15px] font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        {/* Right CTA */}
+        <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button asChild className="hidden rounded-full sm:inline-flex">
-            <Link to="/request">Start Your Project</Link>
+          <Button
+            asChild
+            className="hidden h-11 rounded-full bg-foreground px-6 text-sm font-semibold text-background shadow-sm hover:bg-foreground/90 sm:inline-flex"
+          >
+            <Link to="/request" className="flex items-center gap-2">
+              Start Your Project
+              <ArrowRight className="size-4" />
+            </Link>
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="rounded-full lg:hidden"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
           >

@@ -75,129 +75,280 @@ function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-section relative overflow-hidden">
-        {/* Subtle background effects */}
-        <div className="pointer-events-none absolute inset-0" aria-hidden>
-          <div className="hero-orb hero-orb-1" />
-          <div className="hero-orb hero-orb-2" />
-          <div className="hero-orb hero-orb-3" />
+      <section className="hero-section relative overflow-hidden bg-gradient-to-b from-background via-surface/30 to-background pt-6 pb-20 lg:pt-10 lg:pb-32">
+        {/* Soft background ambient lighting */}
+        <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
+          <div className="absolute top-0 right-0 h-[600px] w-[600px] rounded-full bg-gradient-to-bl from-blue-100/40 via-indigo-50/20 to-transparent blur-3xl dark:from-blue-950/20" />
+          <div className="absolute bottom-0 left-1/4 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-violet-100/30 to-transparent blur-3xl dark:from-violet-950/10" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
-          <div className="grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
-            {/* Left column — text content */}
-            <div className="max-w-xl">
-              {/* Badge */}
-              <div className="hero-fade-in" style={{ animationDelay: "0s" }}>
-                <span className="hero-badge inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-1.5 text-xs font-medium text-muted-foreground shadow-soft backdrop-blur-sm">
-                  <span className="hero-pulse-dot size-2 rounded-full bg-primary" />
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-8">
+            {/* Left Column — Text & CTAs */}
+            <div className="max-w-2xl">
+              {/* Pill Badge */}
+              <div className="hero-fade-in inline-block" style={{ animationDelay: "0.05s" }}>
+                <span className="inline-flex items-center gap-2.5 rounded-full border border-border/80 bg-card/90 px-4 py-1.5 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur-md">
+                  <span className="size-2 rounded-full bg-blue-600 shadow-sm shadow-blue-500/50" />
                   We build. You dream.
                 </span>
               </div>
 
-              {/* Heading */}
-              <div className="hero-fade-in" style={{ animationDelay: "0.15s" }}>
-                <h1 className="mt-8 text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              {/* Editorial Headline with Serif & Blue Swoosh Underline */}
+              <div className="hero-fade-in mt-6" style={{ animationDelay: "0.15s" }}>
+                <h1 className="font-hero-serif text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-[68px] leading-[1.08]">
                   Have an Idea?
                   <br />
                   Let&apos;s{" "}
-                  <span className="hero-script-text">Build</span>{" "}
+                  <span className="relative inline-block text-blue-600 dark:text-blue-400">
+                    Build
+                    {/* Hand-drawn blue underline brush stroke */}
+                    <svg
+                      className="absolute -bottom-2.5 left-0 w-[108%] text-blue-600 dark:text-blue-400 pointer-events-none"
+                      viewBox="0 0 160 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 13.5C35 4.5 110 3.5 156 10C125 14.5 60 17 20 15.5"
+                        stroke="currentColor"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>{" "}
                   It.
                 </h1>
               </div>
 
-              {/* Subtitle */}
-              <div className="hero-fade-in" style={{ animationDelay: "0.3s" }}>
-                <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
+              {/* Subheading */}
+              <div className="hero-fade-in mt-6" style={{ animationDelay: "0.25s" }}>
+                <p className="max-w-xl text-[16px] leading-relaxed text-muted-foreground sm:text-[17px]">
                   Share your requirements and we&apos;ll create custom websites, mobile apps,
                   AI solutions and automation that elevate your business.
                 </p>
               </div>
 
-              {/* Service tags */}
-              <div className="hero-fade-in" style={{ animationDelay: "0.4s" }}>
-                <div className="mt-7 flex flex-wrap items-center gap-3">
-                  {HERO_SERVICES.map((svc) => (
-                    <span
-                      key={svc.label}
-                      className="hero-chip inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-4 py-2 text-sm font-medium text-foreground backdrop-blur-sm"
-                    >
-                      <svc.icon className="size-4 text-primary" />
-                      {svc.label}
+              {/* Service Pills Bar with Dividers */}
+              <div className="hero-fade-in mt-8" style={{ animationDelay: "0.35s" }}>
+                <div className="inline-flex flex-wrap items-center gap-2 rounded-2xl border border-border/70 bg-card/80 p-2 shadow-sm backdrop-blur-md sm:gap-3">
+                  {/* Websites */}
+                  <div className="flex items-center gap-2 px-2.5 py-1.5">
+                    <span className="flex size-7 items-center justify-center rounded-lg bg-blue-100/80 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400">
+                      <Globe className="size-4" />
                     </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* CTA buttons */}
-              <div className="hero-fade-in" style={{ animationDelay: "0.5s" }}>
-                <div className="mt-9 flex flex-wrap gap-3">
-                  <Button asChild size="lg" className="hero-cta-primary group rounded-full bg-foreground px-7 text-background hover:bg-foreground/90">
-                    <Link to="/request">
-                      Start Your Project
-                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline" className="rounded-full px-7">
-                    <Link to="/" hash="how-it-works">
-                      <span className="grid size-5 place-items-center rounded-full bg-foreground text-background">
-                        <ArrowRight className="size-3" />
-                      </span>
-                      See How It Works
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-
-              {/* Trust section with avatars */}
-              <div className="hero-fade-in" style={{ animationDelay: "0.6s" }}>
-                <div className="mt-10 flex items-center gap-3">
-                  {/* Avatar stack */}
-                  <div className="flex -space-x-2.5">
-                    {[
-                      "bg-gradient-to-br from-violet to-primary",
-                      "bg-gradient-to-br from-primary to-blue-400",
-                      "bg-gradient-to-br from-amber-400 to-orange-500",
-                      "bg-gradient-to-br from-emerald-400 to-teal-500",
-                    ].map((bg, i) => (
-                      <span
-                        key={i}
-                        className={`grid size-9 place-items-center rounded-full border-2 border-background text-[10px] font-bold text-white ${bg}`}
-                      >
-                        {String.fromCharCode(65 + i * 3)}
-                      </span>
-                    ))}
+                    <span className="text-xs font-semibold text-foreground sm:text-sm">Websites</span>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="font-semibold text-foreground">Trusted by businesses</span>{" "}
-                    across India
-                    <br />
-                    to turn ideas into real results.
-                  </p>
+
+                  <span className="hidden h-5 w-px bg-border sm:block" aria-hidden />
+
+                  {/* Mobile Apps */}
+                  <div className="flex items-center gap-2 px-2.5 py-1.5">
+                    <span className="flex size-7 items-center justify-center rounded-lg bg-blue-100/80 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400">
+                      <Smartphone className="size-4" />
+                    </span>
+                    <span className="text-xs font-semibold text-foreground sm:text-sm">Mobile Apps</span>
+                  </div>
+
+                  <span className="hidden h-5 w-px bg-border sm:block" aria-hidden />
+
+                  {/* AI Solutions */}
+                  <div className="flex items-center gap-2 px-2.5 py-1.5">
+                    <span className="flex size-7 items-center justify-center rounded-lg bg-purple-100/80 text-purple-600 dark:bg-purple-950/60 dark:text-purple-400">
+                      <Bot className="size-4" />
+                    </span>
+                    <span className="text-xs font-semibold text-foreground sm:text-sm">AI Solutions</span>
+                  </div>
+
+                  <span className="hidden h-5 w-px bg-border sm:block" aria-hidden />
+
+                  {/* Automation */}
+                  <div className="flex items-center gap-2 px-2.5 py-1.5">
+                    <span className="flex size-7 items-center justify-center rounded-lg bg-purple-100/80 text-purple-600 dark:bg-purple-950/60 dark:text-purple-400">
+                      <Zap className="size-4" />
+                    </span>
+                    <span className="text-xs font-semibold text-foreground sm:text-sm">Automation</span>
+                  </div>
                 </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="hero-fade-in mt-9 flex flex-wrap items-center gap-4" style={{ animationDelay: "0.45s" }}>
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-13 rounded-full bg-foreground px-8 text-base font-semibold text-background shadow-md transition-transform hover:scale-[1.02] hover:bg-foreground/90"
+                >
+                  <Link to="/request" className="flex items-center gap-2.5">
+                    Start Your Project
+                    <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
+
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="h-13 rounded-full border-border/80 bg-card/80 px-7 text-base font-semibold text-foreground shadow-sm backdrop-blur-sm transition-transform hover:scale-[1.02] hover:bg-secondary"
+                >
+                  <Link to="/" hash="how-it-works" className="flex items-center gap-2.5">
+                    <span className="flex size-6 items-center justify-center rounded-full bg-foreground text-background">
+                      <svg viewBox="0 0 24 24" className="size-3 fill-current">
+                        <polygon points="6 3 20 12 6 21 6 3" />
+                      </svg>
+                    </span>
+                    See How It Works
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Trust Section / Social Proof */}
+              <div className="hero-fade-in mt-12 flex items-center gap-4" style={{ animationDelay: "0.55s" }}>
+                {/* 4 Overlapping Avatar Photos */}
+                <div className="flex -space-x-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                    alt="Client avatar"
+                    className="size-11 rounded-full border-2 border-background object-cover shadow-sm"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+                    alt="Client avatar"
+                    className="size-11 rounded-full border-2 border-background object-cover shadow-sm"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80"
+                    alt="Client avatar"
+                    className="size-11 rounded-full border-2 border-background object-cover shadow-sm"
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80"
+                    alt="Client avatar"
+                    className="size-11 rounded-full border-2 border-background object-cover shadow-sm"
+                  />
+                </div>
+
+                <p className="text-sm leading-snug text-muted-foreground">
+                  <span className="font-bold text-foreground">Trusted by businesses</span> across India
+                  <br />
+                  to turn ideas into real results.
+                </p>
               </div>
             </div>
 
-            {/* Right column — laptop mockup */}
-            <div className="hero-fade-in relative" style={{ animationDelay: "0.3s" }}>
-              <div className="hero-laptop-float relative">
-                <img
-                  src="/hero-laptop.jpg"
-                  alt="SoftWare Hub project interface on a laptop"
-                  className="w-full rounded-2xl shadow-lift"
-                  width={720}
-                  height={540}
-                  loading="eager"
-                />
-                {/* Glow behind laptop */}
-                <div className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-violet/10 blur-2xl" aria-hidden />
+            {/* Right Column — Realistic Workspace Mockup (Laptop, Desk, UI, Books, Mug, Plant) */}
+            <div className="hero-fade-in relative lg:pl-4" style={{ animationDelay: "0.25s" }}>
+              <div className="relative mx-auto max-w-[560px] lg:max-w-none">
+                {/* Window blinds shadow cast & warm glow */}
+                <div className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-blue-500/10 via-amber-200/15 to-transparent blur-2xl" />
+
+                {/* Laptop device container */}
+                <div className="relative rounded-3xl border border-border/80 bg-card p-3 shadow-2xl shadow-slate-900/10 dark:shadow-blue-950/20 sm:p-4">
+                  {/* Laptop screen wrapper */}
+                  <div className="overflow-hidden rounded-2xl border border-border/60 bg-slate-50 p-4 dark:bg-slate-900 sm:p-6">
+                    {/* Screen top bar */}
+                    <div className="flex items-center justify-between border-b border-border/40 pb-3">
+                      <div className="flex items-center gap-2">
+                        <div className="flex size-6 items-center justify-center rounded-lg bg-blue-600 text-white">
+                          <svg viewBox="0 0 24 24" className="size-3.5 fill-none stroke-current" strokeWidth="2.5">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                            <polyline points="2 17 12 22 22 17" />
+                            <polyline points="2 12 12 17 22 12" />
+                          </svg>
+                        </div>
+                        <span className="text-xs font-bold text-foreground">Software Hub</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="size-2 rounded-full bg-slate-300 dark:bg-slate-700" />
+                        <span className="size-2 rounded-full bg-slate-300 dark:bg-slate-700" />
+                        <span className="size-2 rounded-full bg-slate-300 dark:bg-slate-700" />
+                      </div>
+                    </div>
+
+                    {/* App Content inside laptop screen */}
+                    <div className="mt-5">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="text-lg font-bold text-foreground sm:text-xl">New Project</h3>
+                          <p className="text-xs text-muted-foreground">Describe your idea</p>
+                        </div>
+                        <span className="text-xs font-medium text-blue-600 dark:text-blue-400">Step 1 of 4</span>
+                      </div>
+
+                      {/* Mock input field */}
+                      <div className="mt-4 rounded-xl border border-border bg-background px-3.5 py-2.5 text-xs text-muted-foreground shadow-inner">
+                        I want to build an AI powered mobile and web platform...
+                      </div>
+
+                      {/* 4 Interactive Service Cards */}
+                      <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+                        <div className="rounded-xl border-2 border-blue-600 bg-blue-50/60 p-2.5 text-center dark:bg-blue-950/40">
+                          <div className="mx-auto flex size-8 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm">
+                            <Globe className="size-4" />
+                          </div>
+                          <span className="mt-2 block text-[11px] font-bold text-blue-900 dark:text-blue-200">Website</span>
+                        </div>
+
+                        <div className="rounded-xl border border-border bg-card p-2.5 text-center transition-colors hover:border-blue-300">
+                          <div className="mx-auto flex size-8 items-center justify-center rounded-lg bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+                            <Smartphone className="size-4" />
+                          </div>
+                          <span className="mt-2 block text-[11px] font-medium text-muted-foreground">Mobile App</span>
+                        </div>
+
+                        <div className="rounded-xl border border-border bg-card p-2.5 text-center transition-colors hover:border-purple-300">
+                          <div className="mx-auto flex size-8 items-center justify-center rounded-lg bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300">
+                            <Bot className="size-4" />
+                          </div>
+                          <span className="mt-2 block text-[11px] font-medium text-muted-foreground">AI Automation</span>
+                        </div>
+
+                        <div className="rounded-xl border border-border bg-card p-2.5 text-center transition-colors hover:border-indigo-300">
+                          <div className="mx-auto flex size-8 items-center justify-center rounded-lg bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+                            <Boxes className="size-4" />
+                          </div>
+                          <span className="mt-2 block text-[11px] font-medium text-muted-foreground">Custom App</span>
+                        </div>
+                      </div>
+
+                      {/* Screen bottom action */}
+                      <div className="mt-4 flex items-center justify-between border-t border-border/40 pt-3">
+                        <span className="text-[11px] text-muted-foreground">Free estimate in 24 hours</span>
+                        <Button size="sm" className="h-8 rounded-lg bg-blue-600 px-4 text-xs font-semibold text-white hover:bg-blue-700">
+                          Next <ArrowRight className="ml-1 size-3" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Laptop base hinge */}
+                  <div className="mt-2 flex items-center justify-center">
+                    <div className="h-1.5 w-24 rounded-full bg-slate-300 dark:bg-slate-700" />
+                  </div>
+                </div>
+
+                {/* Desk accents: Floating floating tags & book stack badges */}
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-2 px-2 text-xs font-medium text-muted-foreground">
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 border border-border/80 shadow-sm">
+                      <span className="size-1.5 rounded-full bg-blue-500" /> Design
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 border border-border/80 shadow-sm">
+                      <span className="size-1.5 rounded-full bg-indigo-500" /> Develop
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 border border-border/80 shadow-sm">
+                      <span className="size-1.5 rounded-full bg-emerald-500" /> Deploy
+                    </span>
+                  </div>
+
+                  <span className="text-[11px] text-muted-foreground">
+                    ⚡ 1 business day reply
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom gradient fade */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent" aria-hidden />
       </section>
 
       {/* Services / Project types */}

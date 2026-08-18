@@ -20,7 +20,8 @@
   --radius-4xl: calc(var(--radius) + 16px);
 
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "DM Sans", ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -333,25 +334,20 @@
   }
 }
 
-/* Hero script/handwritten text ("Build") */
-.hero-script-text {
-  font-family: "Dancing Script", cursive;
-  font-weight: 700;
-  font-style: italic;
-  color: var(--primary);
-  position: relative;
-  display: inline-block;
+/* Hero editorial serif typography */
+.font-hero-serif {
+  font-family: "Playfair Display", Georgia, serif;
 }
-.hero-script-text::after {
-  content: "";
+
+/* Hand-drawn blue underline swoosh under "Build" */
+.hero-underline-swoosh {
   position: absolute;
-  bottom: -2px;
   left: -4px;
   right: -4px;
-  height: 8px;
-  background: color-mix(in oklab, var(--primary) 25%, transparent);
-  border-radius: 50%;
-  transform: scaleY(0.5);
+  bottom: -6px;
+  width: calc(100% + 8px);
+  height: 12px;
+  pointer-events: none;
 }
 
 @keyframes gradient-shift {
