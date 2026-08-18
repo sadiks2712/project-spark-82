@@ -6,13 +6,13 @@ import type { RequirementPayload } from "@/lib/requirement";
  * hardcode credentials in components. The EmailJS public key is designed for
  * client-side use, so exposing it in the browser bundle is expected.
  */
-const PUBLIC_KEY = (import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "").trim();
-const SERVICE_ID = (import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "").trim();
-const TEMPLATE_ID = (import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "").trim();
+const PUBLIC_KEY = (import.meta.env['VITE_EMAILJS_PUBLIC_KEY'] ?? "").trim();
+const SERVICE_ID = (import.meta.env['VITE_EMAILJS_SERVICE_ID'] ?? "").trim();
+const TEMPLATE_ID = (import.meta.env['VITE_EMAILJS_TEMPLATE_ID'] ?? "").trim();
 const CUSTOMER_TEMPLATE_ID = (
-  import.meta.env.VITE_EMAILJS_CUSTOMER_TEMPLATE_ID ?? TEMPLATE_ID
+  import.meta.env['VITE_EMAILJS_CUSTOMER_TEMPLATE_ID'] ?? TEMPLATE_ID
 ).trim();
-const BUSINESS_EMAIL = (import.meta.env.VITE_BUSINESS_EMAIL ?? "").trim();
+const BUSINESS_EMAIL = (import.meta.env['VITE_BUSINESS_EMAIL'] ?? "").trim();
 
 export const emailConfigured = Boolean(PUBLIC_KEY && SERVICE_ID && TEMPLATE_ID);
 
