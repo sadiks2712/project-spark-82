@@ -9,13 +9,13 @@ import { buildSummaryText, type RequirementPayload } from "@/lib/requirement";
 export const Route = createFileRoute("/success")({
   head: () => ({
     meta: [
-      { title: "Requirement Submitted — Buildbrief" },
+      { title: "Requirement Submitted — SoftWare Hub" },
       {
         name: "description",
         content:
           "Your project requirement has been received. Keep your Requirement ID and download a copy of your brief.",
       },
-      { property: "og:title", content: "Requirement Submitted — Buildbrief" },
+      { property: "og:title", content: "Requirement Submitted — SoftWare Hub" },
       { property: "og:description", content: "Your project requirement has been received." },
       { name: "robots", content: "noindex" },
     ],

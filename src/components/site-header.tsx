@@ -24,7 +24,7 @@ export function SiteHeader() {
             <Hexagon className="size-4 text-primary-foreground" strokeWidth={2.5} />
           </span>
           <span className="font-display text-[1.05rem] font-bold tracking-tight">
-            Buildbrief
+            SoftWare Hub
           </span>
         </Link>
 

@@ -5,13 +5,13 @@ import { Card } from "@/components/ui/card";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Buildbrief — Product Studio for Web, Apps & AI" },
+      { title: "About SoftWare Hub — Product Studio for Web, Apps & AI" },
       {
         name: "description",
         content:
-          "Buildbrief is a small senior product studio building websites, mobile apps, AI automations and custom software for founders and growing businesses.",
+          "SoftWare Hub is a small senior product studio building websites, mobile apps, AI automations and custom software for founders and growing businesses.",
       },
-      { property: "og:title", content: "About Buildbrief — Product Studio for Web, Apps & AI" },
+      { property: "og:title", content: "About SoftWare Hub — Product Studio for Web, Apps & AI" },
       {
         property: "og:description",
         content:
@@ -37,7 +37,7 @@ function AboutPage() {
         We turn rough ideas into <span className="text-gradient-brand">shipped products</span>.
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-        Buildbrief is a compact product studio. We work across four practices — web
+        SoftWare Hub is a compact product studio. We work across four practices — web
         development, mobile app development, AI &amp; automation, and custom software —
         with the same people from first call to launch. No account managers, no handoffs
         between agencies, no bloated process.

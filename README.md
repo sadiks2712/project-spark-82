@@ -1,4 +1,4 @@
-# Buildbrief — Client Requirement Collection Website
+# SoftWare Hub — Client Requirement Collection Website
 
 A production-ready requirement collection platform for web development, mobile app
 development, AI & automation, and custom software services.

@@ -6,13 +6,13 @@ import { Card } from "@/components/ui/card";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Buildbrief — Talk About Your Project" },
+      { title: "Contact SoftWare Hub — Talk About Your Project" },
       {
         name: "description",
         content:
-          "Reach Buildbrief by email, WhatsApp or phone, or submit a structured project requirement and get a scoped reply within one business day.",
+          "Reach SoftWare Hub by email, WhatsApp or phone, or submit a structured project requirement and get a scoped reply within one business day.",
       },
-      { property: "og:title", content: "Contact Buildbrief — Talk About Your Project" },
+      { property: "og:title", content: "Contact SoftWare Hub — Talk About Your Project" },
       {
         property: "og:description",
         content: "Email, WhatsApp or send a structured project brief. Reply within one business day.",
@@ -26,16 +26,16 @@ const CHANNELS = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@buildbrief.dev",
-    href: "mailto:hello@buildbrief.dev",
+    value: "armanmulani313@gmail.com",
+    href: "mailto:armanmulani313@gmail.com",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+91 90000 00000",
-    href: "https://wa.me/919000000000",
+    value: "+91 81779 00698",
+    href: "https://wa.me/918177900698",
   },
-  { icon: Phone, label: "Phone", value: "+91 90000 00000", href: "tel:+919000000000" },
+  { icon: Phone, label: "Phone", value: "+91 84597 52992", href: "tel:+918459752992" },
   { icon: Clock, label: "Response time", value: "Within 1 business day", href: null },
 ];
 

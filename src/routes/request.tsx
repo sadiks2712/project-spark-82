@@ -4,7 +4,7 @@ import { RequirementWizard } from "@/components/request/wizard";
 export const Route = createFileRoute("/request")({
   head: () => ({
     meta: [
-      { title: "Start Your Project — Share Your Requirement | Buildbrief" },
+      { title: "Start Your Project — Share Your Requirement | SoftWare Hub" },
       {
         name: "description",
         content:

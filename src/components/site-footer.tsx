@@ -10,7 +10,7 @@ export function SiteFooter() {
             <span className="grid size-9 place-items-center rounded-xl bg-gradient-brand">
               <Hexagon className="size-4 text-primary-foreground" strokeWidth={2.5} />
             </span>
-            <span className="font-display text-[1.05rem] font-bold">Buildbrief</span>
+            <span className="font-display text-[1.05rem] font-bold">SoftWare Hub</span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             We design and build websites, mobile apps, AI automations and custom software.
@@ -57,7 +57,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <p className="mx-auto max-w-6xl px-4 py-6 text-xs text-muted-foreground sm:px-6">
-          © {new Date().getFullYear()} Buildbrief. All rights reserved.
+          © {new Date().getFullYear()} SoftWare Hub. All rights reserved.
         </p>
       </div>
     </footer>

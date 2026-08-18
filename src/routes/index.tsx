@@ -9,6 +9,10 @@ import {
   Zap,
   Users,
   Gauge,
+  Sparkles,
+  Code2,
+  Rocket,
+  CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -23,13 +27,13 @@ import { PROJECT_TYPES } from "@/lib/requirement";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Buildbrief — Tell Us What You Want to Build" },
+      { title: "SoftWare Hub — Tell Us What You Want to Build" },
       {
         name: "description",
         content:
           "Share your idea, requirements, features, budget and timeline. We build websites, mobile apps, AI automation and custom software — and reply with real scope in one business day.",
       },
-      { property: "og:title", content: "Buildbrief — Tell Us What You Want to Build" },
+      { property: "og:title", content: "SoftWare Hub — Tell Us What You Want to Build" },
       {
         property: "og:description",
         content:
@@ -64,39 +68,114 @@ const FAQ = [
   { q: "Is my information kept private?", a: "Yes. Your brief is used only to scope and respond to your enquiry. We're happy to sign an NDA on request." },
 ];
 
+const HERO_STATS = [
+  { value: "60+", label: "Projects Delivered" },
+  { value: "24h", label: "Response Time" },
+  { value: "100%", label: "Senior Engineers" },
+  { value: "4.9★", label: "Client Rating" },
+];
+
 function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="hero-section relative overflow-hidden">
+        {/* Animated background orbs */}
+        <div className="pointer-events-none absolute inset-0" aria-hidden>
+          <div className="hero-orb hero-orb-1" />
+          <div className="hero-orb hero-orb-2" />
+          <div className="hero-orb hero-orb-3" />
+        </div>
         <div className="grid-backdrop pointer-events-none absolute inset-0" aria-hidden />
-        <div className="relative mx-auto w-full max-w-5xl px-4 py-24 text-center sm:px-6 sm:py-32">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground shadow-soft">
-            <span className="size-1.5 rounded-full bg-success" />
-            Accepting new projects — reply within 1 business day
-          </span>
-          <h1 className="mt-8 text-4xl leading-[1.05] font-bold sm:text-6xl">
-            Tell Us What You{" "}
-            <span className="text-gradient-brand">Want to Build.</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Share your idea, requirements, features, budget and timeline. We&apos;ll review your
-            project and help turn your idea into reality.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" className="rounded-full px-7">
-              <Link to="/request">
-                Start Your Project
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full px-7">
-              <Link to="/" hash="how-it-works">
-                How It Works
-              </Link>
-            </Button>
+
+        <div className="relative mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-32 lg:py-40">
+          <div className="text-center">
+            {/* Animated badge */}
+            <div className="hero-fade-in" style={{ animationDelay: "0s" }}>
+              <span className="hero-badge inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-5 py-2 text-xs font-medium text-muted-foreground shadow-soft backdrop-blur-sm">
+                <span className="hero-pulse-dot size-2 rounded-full bg-success" />
+                Accepting new projects — reply within 1 business day
+                <Sparkles className="size-3.5 text-primary" />
+              </span>
+            </div>
+
+            {/* Main heading with stagger */}
+            <div className="hero-fade-in" style={{ animationDelay: "0.15s" }}>
+              <h1 className="mx-auto mt-10 max-w-4xl text-4xl leading-[1.08] font-bold tracking-tight sm:text-5xl md:text-7xl">
+                We Build{" "}
+                <span className="hero-gradient-text">Digital Products</span>
+                <br className="hidden sm:block" />
+                {" "}That Drive Growth.
+              </h1>
+            </div>
+
+            {/* Subtitle */}
+            <div className="hero-fade-in" style={{ animationDelay: "0.3s" }}>
+              <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Share your idea, requirements, budget and timeline. We design and engineer
+                websites, mobile apps, AI automations and custom software —{" "}
+                <span className="font-medium text-foreground">scoped in hours, not weeks.</span>
+              </p>
+            </div>
+
+            {/* CTA buttons */}
+            <div className="hero-fade-in" style={{ animationDelay: "0.45s" }}>
+              <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <Button asChild size="lg" className="hero-cta-primary group rounded-full px-8 text-base shadow-glow">
+                  <Link to="/request">
+                    Start Your Project
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="rounded-full px-8 text-base backdrop-blur-sm">
+                  <Link to="/" hash="how-it-works">
+                    <Code2 className="size-4" />
+                    How It Works
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="hero-fade-in" style={{ animationDelay: "0.6s" }}>
+              <div className="mx-auto mt-14 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12">
+                {HERO_STATS.map((stat) => (
+                  <div key={stat.label} className="flex flex-col items-center">
+                    <span className="font-display text-2xl font-bold text-gradient-brand sm:text-3xl">
+                      {stat.value}
+                    </span>
+                    <span className="mt-1 text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Floating feature chips */}
+            <div className="hero-fade-in" style={{ animationDelay: "0.75s" }}>
+              <div className="mt-12 flex flex-wrap justify-center gap-3">
+                {[
+                  { icon: Globe, label: "Web Apps" },
+                  { icon: Smartphone, label: "Mobile Apps" },
+                  { icon: Bot, label: "AI Automation" },
+                  { icon: Boxes, label: "Custom Software" },
+                ].map((chip) => (
+                  <span
+                    key={chip.label}
+                    className="hero-chip inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-4 py-2 text-sm font-medium text-muted-foreground backdrop-blur-sm transition-all hover:border-primary/40 hover:text-foreground hover:shadow-soft"
+                  >
+                    <chip.icon className="size-4 text-primary" />
+                    {chip.label}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* Bottom gradient fade */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" aria-hidden />
       </section>
 
       {/* Services / Project types */}

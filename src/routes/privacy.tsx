@@ -3,13 +3,13 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Buildbrief" },
+      { title: "Privacy Policy — SoftWare Hub" },
       {
         name: "description",
         content:
-          "How Buildbrief collects, uses and stores the project requirement information you submit, including email delivery and CSV record keeping.",
+          "How SoftWare Hub collects, uses and stores the project requirement information you submit, including email delivery and CSV record keeping.",
       },
-      { property: "og:title", content: "Privacy Policy — Buildbrief" },
+      { property: "og:title", content: "Privacy Policy — SoftWare Hub" },
       {
         property: "og:description",
         content: "How we handle the project information you share with us.",
@@ -56,7 +56,7 @@ const SECTIONS: { title: string; body: string[] }[] = [
   },
   {
     title: "Contact",
-    body: ["Questions about this policy? Email hello@buildbrief.dev."],
+    body: ["Questions about this policy? Email armanmulani313@gmail.com."],
   },
 ];
 

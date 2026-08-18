@@ -80,11 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Buildbrief — Client Requirement Collection" },
-      { name: "description", content: "Share your project idea, requirements, budget and timeline with Buildbrief." },
+      { title: "SoftWare Hub — Client Requirement Collection" },
+      { name: "description", content: "Share your project idea, requirements, budget and timeline with SoftWare Hub." },
       
-      { property: "og:title", content: "Buildbrief — Client Requirement Collection" },
-      { property: "og:description", content: "Share your project idea, requirements, budget and timeline with Buildbrief." },
+      { property: "og:title", content: "SoftWare Hub — Client Requirement Collection" },
+      { property: "og:description", content: "Share your project idea, requirements, budget and timeline with SoftWare Hub." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },

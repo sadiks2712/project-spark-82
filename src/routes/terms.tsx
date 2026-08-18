@@ -3,16 +3,16 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions — Buildbrief" },
+      { title: "Terms & Conditions — SoftWare Hub" },
       {
         name: "description",
         content:
-          "The terms that apply when you submit a project requirement to Buildbrief, including estimates, confidentiality and intellectual property.",
+          "The terms that apply when you submit a project requirement to SoftWare Hub, including estimates, confidentiality and intellectual property.",
       },
-      { property: "og:title", content: "Terms & Conditions — Buildbrief" },
+      { property: "og:title", content: "Terms & Conditions — SoftWare Hub" },
       {
         property: "og:description",
-        content: "Terms that apply when you submit a project requirement to Buildbrief.",
+        content: "Terms that apply when you submit a project requirement to SoftWare Hub.",
       },
     ],
   }),
