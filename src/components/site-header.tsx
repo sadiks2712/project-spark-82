@@ -4,13 +4,14 @@ import { Menu, X, Hexagon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-const NAV = [
+const NAV: { label: string; to: "/" | "/about" | "/contact"; hash?: string }[] = [
   { label: "Services", to: "/", hash: "services" },
   { label: "How It Works", to: "/", hash: "how-it-works" },
   { label: "Portfolio", to: "/", hash: "portfolio" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
-] as const;
+];
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
