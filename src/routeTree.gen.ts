@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RequestRouteImport } from './routes/request'
+import { Route as SuccessRouteImport } from './routes/success'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ApiSubmitRequirementRouteImport } from './routes/api/submit-requirement'
 
@@ -42,6 +43,11 @@ const RequestRoute = RequestRouteImport.update({
   path: '/request',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SuccessRoute = SuccessRouteImport.update({
+  id: '/success',
+  path: '/success',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/request': typeof RequestRoute
+  '/success': typeof SuccessRoute
   '/terms': typeof TermsRoute
   '/api/submit-requirement': typeof ApiSubmitRequirementRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/request': typeof RequestRoute
+  '/success': typeof SuccessRoute
   '/terms': typeof TermsRoute
   '/api/submit-requirement': typeof ApiSubmitRequirementRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/request': typeof RequestRoute
+  '/success': typeof SuccessRoute
   '/terms': typeof TermsRoute
   '/api/submit-requirement': typeof ApiSubmitRequirementRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/privacy'
     | '/request'
+    | '/success'
     | '/terms'
     | '/api/submit-requirement'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/privacy'
     | '/request'
+    | '/success'
     | '/terms'
     | '/api/submit-requirement'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/privacy'
     | '/request'
+    | '/success'
     | '/terms'
     | '/api/submit-requirement'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
   RequestRoute: typeof RequestRoute
+  SuccessRoute: typeof SuccessRoute
   TermsRoute: typeof TermsRoute
   ApiSubmitRequirementRoute: typeof ApiSubmitRequirementRoute
 }
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RequestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/success': {
+      id: '/success'
+      path: '/success'
+      fullPath: '/success'
+      preLoaderRoute: typeof SuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
   RequestRoute: RequestRoute,
+  SuccessRoute: SuccessRoute,
   TermsRoute: TermsRoute,
   ApiSubmitRequirementRoute: ApiSubmitRequirementRoute,
 }
