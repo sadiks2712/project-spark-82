@@ -333,13 +333,25 @@
   }
 }
 
-/* Hero gradient text with shimmer */
-.hero-gradient-text {
-  background-image: var(--gradient-brand);
-  background-size: 200% auto;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-shift 4s ease-in-out infinite;
+/* Hero script/handwritten text ("Build") */
+.hero-script-text {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+}
+.hero-script-text::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: -4px;
+  right: -4px;
+  height: 8px;
+  background: color-mix(in oklab, var(--primary) 25%, transparent);
+  border-radius: 50%;
+  transform: scaleY(0.5);
 }
 
 @keyframes gradient-shift {
@@ -383,11 +395,22 @@
   transform: translateY(-1px);
 }
 
+/* Laptop subtle float */
+.hero-laptop-float {
+  animation: laptop-float 6s ease-in-out infinite;
+}
+
+@keyframes laptop-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .hero-orb { animation: none; }
   .hero-fade-in { animation: none; opacity: 1; transform: none; }
   .hero-gradient-text { animation: none; }
   .hero-pulse-dot { animation: none; }
+  .hero-laptop-float { animation: none; }
 }
 
