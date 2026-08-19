@@ -193,6 +193,7 @@ export const DESIGN_STYLES = [
 export const PAYMENT_GATEWAYS = ["Razorpay", "Stripe", "PayPal", "Other", "Not Sure"];
 
 export const BUDGETS = [
+  "₹5,000 – ₹10,000",
   "₹10,000 – ₹25,000",
   "₹25,000 – ₹50,000",
   "₹50,000 – ₹1,00,000",
