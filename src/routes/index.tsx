@@ -78,7 +78,7 @@ function Index() {
       <section className="hero-section relative min-h-[620px] lg:min-h-[calc(100vh-4rem)] flex items-center overflow-hidden bg-[#fafafa] dark:bg-background pt-4 pb-12 lg:py-16">
         {/* Full Image Background anchored to bottom right */}
         <div 
-          className="absolute inset-0 bg-cover bg-no-repeat bg-center md:bg-center lg:bg-center"
+          className="absolute inset-0 bg-cover bg-no-repeat bg-bottom"
           style={{ backgroundImage: "url('/hero-bg.jpg')" }}
           aria-hidden
         />
