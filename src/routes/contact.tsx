@@ -26,8 +26,8 @@ const CHANNELS = [
   {
     icon: Mail,
     label: "Email",
-    value: "armanmulani313@gmail.com",
-    href: "mailto:armanmulani313@gmail.com",
+    value: "softwarehubsupport1224@gmail.com",
+    href: "mailto:softwarehubsupport1224@gmail.com",
   },
   {
     icon: MessageCircle,

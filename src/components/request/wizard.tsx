@@ -989,14 +989,13 @@ function StepContact({
         />
       </div>
 
-      <OptionGroup
+      <MultiSelect
         label="Preferred communication method"
         required
         options={COMMUNICATION_METHODS}
-        value={form.communicationMethod}
+        values={form.communicationMethod}
         onChange={(v) => set("communicationMethod", v)}
         error={errors.communicationMethod}
-        columns={2}
       />
 
       <div className="grid gap-6 sm:grid-cols-3">
@@ -1160,7 +1159,7 @@ function StepReview({
         <Row label="Email" value={form.email} />
         <Row label="Phone / WhatsApp" value={form.phone} />
         <Row label="Country" value={form.country} />
-        <Row label="Preferred contact" value={form.communicationMethod} />
+        <Row label="Preferred contact" value={form.communicationMethod.join(", ")} />
         <Row label="Website" value={form.companyWebsite} />
         <Row label="LinkedIn" value={form.linkedin} />
         <Row label="Social" value={form.socialMedia} />

@@ -56,7 +56,7 @@ const SECTIONS: { title: string; body: string[] }[] = [
   },
   {
     title: "Contact",
-    body: ["Questions about this policy? Email armanmulani313@gmail.com."],
+    body: ["Questions about this policy? Email softwarehubsupport1224@gmail.com."],
   },
 ];
 

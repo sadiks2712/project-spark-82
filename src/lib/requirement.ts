@@ -282,7 +282,7 @@ export type RequirementForm = {
   email: string;
   phone: string;
   country: string;
-  communicationMethod: string;
+  communicationMethod: string[];
   companyWebsite: string;
   linkedin: string;
   socialMedia: string;
@@ -330,7 +330,7 @@ export const emptyForm: RequirementForm = {
   email: "",
   phone: "",
   country: "",
-  communicationMethod: "",
+  communicationMethod: [],
   companyWebsite: "",
   linkedin: "",
   socialMedia: "",
@@ -461,7 +461,7 @@ export function buildPayload(
     email: form.email.trim(),
     phone: form.phone.trim(),
     country: form.country.trim(),
-    communication_method: form.communicationMethod,
+    communication_method: form.communicationMethod.join(", "),
     project_type: (form.projectType || "website") as ProjectType,
     project_name: form.projectName.trim(),
     description: description.slice(0, 5000),
